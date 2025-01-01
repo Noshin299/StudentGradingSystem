@@ -1,0 +1,15 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+class student{
+protected:
+string name;
+int id;
+public:
+virtual void getDetails()=0;
+virtual void calculateGrade()=0;
+virtual void displayGrade()=0;
+virtual ~Student() {}
+
+};
