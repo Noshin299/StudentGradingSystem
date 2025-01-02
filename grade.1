@@ -40,20 +40,4 @@ void calculateGrade() override
         cout << "\nGrade: " << grade << endl;
     }
 
-static void loadFromFile() {
-        ifstream inFile("student_grades.txt");
-        if (inFile.is_open()) {
-            string line;
-            cout << "\nSaved Student Grades:\n";
-            cout << "----------------------------------\n";
-            while (getline(inFile, line)) {
-                cout << line << endl;
-            }
-            inFile.close();
-        } else {
-            cerr << "Error opening file for reading.\n";
-        }
-    }
-};
-
 
