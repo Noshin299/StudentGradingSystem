@@ -30,13 +30,36 @@ cout << "Enter marks of Mid-Term out of (100): ";
  cin >> finalmarks;
 }
 void saveToFile(){
+ofstream outFromFile("student_grade.txt",ios::app);
+if(outFile.is_open()){
+outFile<<"Student Name: "<<name<<endl;
+outFile<<"Student ID : "<<id<<endl;
+outFile<<"Total percentage: "<<percentage<<endl;
+outFile<<"Grade : "<<grade<<endl;
+outFile<<"      "<<endl;
+outFile.close();
+cout<<"Student details saved to file .\n";
+ }
+else{
+cerr<<"Error opening file for writing .\n";
+ }
+   }
 
-
-
-
-
-
-
-
+int main(){
+FindGrade student;
+student.getDetails();
+student.calculateGrade();
+student.displayGrade();
+student.saveToFile();
+char choice;
+cout<<"Do you want to load grades from file?(Y/N) : "
+cin>> choice;
+if(choise == 'Y' || choise == 'y'){
+FindGrade::lodeFromFile();
+}
+else {
+cout<<"Your file not saved "
+}
+return 0;
 
 }
