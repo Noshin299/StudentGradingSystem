@@ -11,3 +11,49 @@ Q2=quiz2;
 midmarks=mid;
 finalmarks=finalExam
 }
+
+void calculateGrade() override 
+{
+        QT = Q1 + Q2;
+        percQ = (20.0 / 20.0) * QT;
+        percM = (30.0 / 100.0) * midmarks;
+        percF = (50.0 / 100.0) * finalmarks;
+        percentage = percQ + percM + percF;
+
+        if (percentage >= 90.0)
+            grade = "A";
+        else if (percentage >= 80.0)
+            grade = "B";
+        else if (percentage >= 70.0)
+            grade = "C";
+        else if (percentage >= 60.0)
+            grade = "D";
+        else
+            grade = "Fail";
+    }
+
+    void displayGrade() override 
+    {
+        cout << "\nStudent Name: " << name;
+        cout << "\nStudent ID: " << id;
+        cout << "\nTotal Percentage: " << percentage << "%";
+        cout << "\nGrade: " << grade << endl;
+    }
+
+static void loadFromFile() {
+        ifstream inFile("student_grades.txt");
+        if (inFile.is_open()) {
+            string line;
+            cout << "\nSaved Student Grades:\n";
+            cout << "----------------------------------\n";
+            while (getline(inFile, line)) {
+                cout << line << endl;
+            }
+            inFile.close();
+        } else {
+            cerr << "Error opening file for reading.\n";
+        }
+    }
+};
+
+
