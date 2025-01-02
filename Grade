@@ -13,3 +13,14 @@ virtual void displayGrade()=0;
 virtual ~Student() {}
 
 };
+public:
+void getDetails() override{
+cout<<"Enter student name : ";
+cin.ignore();
+getline(cin,name);
+cout<<"Enter student Id: ";
+cin>>id;
+cout<<"Enter  "
+
+
+}
