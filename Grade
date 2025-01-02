@@ -20,7 +20,23 @@ cin.ignore();
 getline(cin,name);
 cout<<"Enter student Id: ";
 cin>>id;
-cout<<"Enter  "
+ cout << "Enter marks of Quiz # 1 out of (10): ";
+ cin >> Q1;
+ cout << "Enter marks of Quiz # 2 out of (10): ";
+cin >> Q2;
+cout << "Enter marks of Mid-Term out of (100): ";
+ cin >> midmarks;
+ cout << "Enter marks of Final Exam out of (100): ";
+ cin >> finalmarks;
+}
+void saveToFile(){
+
+
+
+
+
+
+
 
 
 }
