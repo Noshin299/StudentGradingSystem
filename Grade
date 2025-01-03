@@ -52,37 +52,44 @@ public:
         }
     }
 
-void saveToFile(){
-ofstream outFromFile("student_grade.txt",ios::app);
-if(outFile.is_open()){
-outFile<<"Student Name: "<<name<<endl;
-outFile<<"Student ID : "<<id<<endl;
-outFile<<"Total percentage: "<<percentage<<endl;
-outFile<<"Grade : "<<grade<<endl;
-outFile<<"      "<<endl;
-outFile.close();
-cout<<"Student details saved to file .\n";
- }
-else{
-cerr<<"Error opening file for writing .\n";
- }
-   }
+void save()
+{
+    FindGrade student;
+    int a;
+    cout <<endl;
+    while(true)
+        {
+    cout<<"1. see details\n2. calculate grade\n3.back\nEnter your choice: ";
+    cin>>a;
+    switch (a)
+{
+    case 1:
+        int id;
+        cout <<"Enter id :";
+        cin>>id;
+        cout<<endl;
+        student.loadFromFile(id);
+        cout<<endl;
+        break;
 
-int main(){
-FindGrade student;
-student.getDetails();
-student.calculateGrade();
-student.displayGrade();
-student.saveToFile();
-char choice;
-cout<<"Do you want to load grades from file?(Y/N) : "
-cin>> choice;
-if(choise == 'Y' || choise == 'y'){
-FindGrade::lodeFromFile();
-}
-else {
-cout<<"Your file not saved "
-}
-return 0;
+    case 2:
+    cout<<"Now you calculate grade."<<endl;
+    student.getDetails();
+    student.calculateGrade();
+    student.displayGrade();
+        break;
 
+   case 3:
+        cout <<"Back."<<endl;
+    return;
+
+    default:
+    cout<<"Invalid choice.";
+    }
+    }
+}
+
+int main() {
+   save();
+   return 0;
 }
